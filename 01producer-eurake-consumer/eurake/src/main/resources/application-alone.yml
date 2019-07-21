@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: 01sc-eurake
+  profiles: alone
+eureka:
+  instance:
+    hostname: localhost
+#    prefer-ip-address: true
+#    instance-id: ${sping.cloud.clien.ipAddress}:${server.port}
+  client:
+    register-with-eureka: false
+#由于该应用为注册中心，所以设置为 false ，代表不向注册中心注册自己 eureka.client.registerwith-eureka=false
+    fetch-registry: false
+#由于注册中心的职责就是维护服务实例，其并不需要检索服务，所以也设置为 false eureka.client.fetch-registry=false
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+server:
+  port: 8080
+

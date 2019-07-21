@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="consumer" />
+        <module name="eurake" />
+        <module name="producer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="01producer-eurake-consumer" target="1.7" />
+      <module name="commen" target="1.5" />
+      <module name="consumer" target="1.7" />
+      <module name="discovery-server" target="1.8" />
+      <module name="eurake" target="1.7" />
+      <module name="eurakeproducerconsumer" target="1.5" />
+      <module name="gateway" target="1.8" />
+      <module name="parent" target="1.5" />
+      <module name="producer" target="1.7" />
+      <module name="spring-cloud-websocket-master" target="1.7" />
+      <module name="web-socket" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
