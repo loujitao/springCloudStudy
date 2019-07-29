@@ -10,3 +10,8 @@ eureka:
       #开启了权限认证的eureka时，使用的URL
 #      defaultZone: http://stevetao:123456@localhost:8761/eureka/
 
+# 自定义实例名称（eureka浏览器显示的）  格式：服务名称：主机IP地址：服务端口
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    # 跳转链接也显示为IP和端口的方式
+    prefer-ip-address: true
