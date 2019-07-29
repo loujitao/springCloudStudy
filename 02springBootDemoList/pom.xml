@@ -25,5 +25,6 @@
 
 	<modules>
         <module>childrenModel</module>
+		<module>propertiesTest</module>
     </modules>
 </project>
