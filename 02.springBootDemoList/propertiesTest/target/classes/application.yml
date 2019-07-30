@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+#自定义配置
+com:
+  steve:
+    name: loujitao
+    age: 27
