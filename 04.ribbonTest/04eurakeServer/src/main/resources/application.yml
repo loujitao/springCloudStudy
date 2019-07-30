@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 03eureka-server
+    name: 04eureka-server
 server:
   port: 8761
 eureka:
@@ -14,13 +14,4 @@ eureka:
     #关闭自我保护（自我保护下，eureka不再移除服务注册表中的信息，即使存在异常节点）
   server:
     enable-self-preservation: false
-
-
-# eureka权限认证信息
-#security:
-#  basic:
-#    enabled: true
-#  user:
-#    name: stevetao
-#    password: 123456
 
