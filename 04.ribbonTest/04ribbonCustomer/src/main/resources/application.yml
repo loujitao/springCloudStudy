@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: 03eureka-customer
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #开启了权限认证的eureka时，使用的URL
+#      defaultZone: http://stevetao:123456@localhost:8761/eureka/
+
