@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 04ribbon-customer
+    name: 04feign-customer
 server:
   port: 8081
 eureka:

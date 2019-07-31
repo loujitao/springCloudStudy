@@ -28,6 +28,7 @@
         <module>04ribbonCustomer</module>
 		<module>04eurakeServer</module>
 		<module>04ribbonProducer</module>	
+		<module>04feignCustomer</module>
     </modules>
 
     <dependencies>

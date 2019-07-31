@@ -25,4 +25,6 @@ public class RibbonClientController {
         ServiceInstance instance=balancerClient.choose("04ribbon-producer");
         return instance;
     }
+
+
 }
