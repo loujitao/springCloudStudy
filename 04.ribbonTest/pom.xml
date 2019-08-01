@@ -29,6 +29,7 @@
 		<module>04eurakeServer</module>
 		<module>04ribbonProducer</module>	
 		<module>04feignCustomer</module>
+		<module>04hystrixCustomer</module>
     </modules>
 
     <dependencies>

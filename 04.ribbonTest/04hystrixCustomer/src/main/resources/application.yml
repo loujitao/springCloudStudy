@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 04feign-customer
+    name: 04hystrix-customer
 server:
   port: 8081
 eureka:
@@ -8,15 +8,14 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
- #  feignClient如果需要开启日志，还需要在配置文件中加入下列项
-logging:
-  level:
-  #  feignClient类路径 ： 日志级别  debug info  error  ...
-    com.steve.feignInterface.PersonFeignClient: debug
-
 # 使用自定义负载均衡策略  服务名.ribbon.n
 #04ribbon-producer:
 #  ribbon:
 #    NFLoadBalancerRuleClassName: com.steve.compent.MyRule
+
+feign:
+  hystrix:
+      enabled: true
+
 
 
