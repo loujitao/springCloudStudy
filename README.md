@@ -44,9 +44,9 @@
          
  05、zuul网关测试
  
-   1）单机版配置eurake
-   2）单机版配置服务提供者
-   3）zuul服务
-      /stevetao/**通配的路由规则；
-      集成eurake，默认路由规则；
-       自定义过滤器filter；       
+       1）单机版配置eurake
+       2）单机版配置服务提供者
+       3）zuul服务
+          /stevetao/**通配的路由规则；
+          集成eurake，默认路由规则；
+           自定义过滤器filter；       
