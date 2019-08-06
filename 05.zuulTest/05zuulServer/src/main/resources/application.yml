@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: 05zuul-server
+server:
+  port: 9527
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #开启了权限认证的eureka时，使用的URL
+#      defaultZone: http://stevetao:123456@localhost:8761/eureka/
+
+# 自定义实例名称（eureka浏览器显示的）  格式：服务名称：主机IP地址：服务端口
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    # 跳转链接也显示为IP和端口的方式
+    prefer-ip-address: true
+
+zuul:
+  routes:
+      stevetaotest:
+      #  启动程序，浏览器访问 http://localhost:9527/stevetao  查看zuul路由效果
+          path: /stevetao/**
+          url:  https://blog.csdn.net/qq_38872310
+      # 本地跳转  （拦截/api接口的请求，转到本地执行）
+      localtest:
+          path: /api/**
+          url: forward:/api
+      # zuul集成到eurake后，注册中心下的服务有对应的默认路由规则
+      # 访问规则是： zuul网关地址/访问的服务名/服务下的接口URL
+      #例如：       http://localhost:9527/05zuul-producer/person/hello
+  retryable: true
+
+ribbon:
+    connectTimeout: 500
+    readTimeout: 5000
+    maxAutoRetries: 1
+    maxAutoRetriesNextServer: 3
+    okToRetryOnAllOperations: true
+#  IP黑名单
+com:
+  keepout:
+    IPstr: 192.168.44.33,192.168.0.13,0:0:0:0:0:0:0:1 # 添加了我本机IP

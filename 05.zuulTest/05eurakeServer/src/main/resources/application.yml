@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: 05eureka-server
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 是否向注册中心注册自己  单机不需要，设为false
+    register-with-eureka: false
+    # 检索服务  单机设置为false
+    fetch-registry: false
+    #关闭自我保护（自我保护下，eureka不再移除服务注册表中的信息，即使存在异常节点）
+  server:
+    enable-self-preservation: false
+
+
+# eureka权限认证信息
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: stevetao
+#    password: 123456
+
