@@ -1,0 +1,37 @@
+            一、springBoot Config的加载机制
+SpringBoot属性的加载顺序如下： （数值越小，优先级越高）
+1、命令行传入的参数 ***
+2、SPRING_APPLCATION_JSON中的属性。SPRING_APPLCATION_JSON是以JSON格式配置在系统
+环境变量中的内容。
+3、java:comp/env中的JNDI属性
+4、Java的系统属性，可以通过system.getProperties()获取内容
+5、操作系统的环境变量
+6、通过random.*配置的随机属性
+7、位于当前应用jar包之外，针对不同{profile}环境的配置文件内容，例如
+application-{profile}.properties 或是YAML定义的配置文件
+8、位于当前应用jar包之内，针对不同{profile}环境的配置文件内容，例如
+application-{profile}.properties 或是YAML定义的配置文件
+9、位于当前应用jar包之外的application.properties和YAML配置内容
+10、位于当前应用jar包之内的application.properties和YAML配置内容
+11、在@Configuration注解修改的类中，通过@propertySource注解定义的属性。
+12、应用默认属性，使用SpringApplication.setDefaultProperties定义的内容。
+
+
+        二、SpringBoot打成jar包后，使用外部配置文件
+第一种是在jar包的同一目录下建一个config文件夹，然后把配置文件放到这个文件夹下；
+第二种是直接把配置文件放到jar包的同级目录； 
+第三种在classpath下建一个config文件夹，然后把配置文件放进去； 
+第四种是在classpath下直接放配置文件。
+
+这四种方式的优先级是从一到四一次降低的，这里主要说前面两种外部配置文件使用。
+
+操作：
+新建config文件夹放入application.properties文件，
+或者在同级目录下放入application.properties文件。
+启动项目：java -jar xxxxx.jar
+            会自动读取配置文件。
+也可指定读取那个配置文件加上 spring.profiles.active=dev
+            java -jar xxxxx.jar  -Dspring.profiles.active=dev
+
+还可以通过命令行的方式：
+java -jar xxxx.jar --spring.config.location=./test.properties
