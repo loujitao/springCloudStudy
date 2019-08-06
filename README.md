@@ -2,18 +2,21 @@
 微服务学习过程中，所有demo源码
 
 01、eurake与服务提供者、消费者案例
+
      1）eurake服务 
        单机版eureka；高可用配置eurake；
      2）服务提供者
         springBoot中controller接口的几种形式
       
  02、springBoot样例
+ 
     1）propertiesTest
       springBoot中加载配置文件中的配置属性；
       note记录，springboot属性加载顺序；
       note记录，springBootjar包使用外部属性文件启动
  
  03、eurake测试
+ 
        1）eurake服务
         单机版eurake服务；
         eurake设置用户名密码；
@@ -25,6 +28,7 @@
           通过restTemplate调用eurake下的服务
  
  04、负载均衡测试
+ 
       1）单机版配置eurake
       2）服务提供者,测试时通过设置port起多个服务，测试负载均衡
       3）ribbon消费者
@@ -39,6 +43,7 @@
          fallbackFactory和fallback两种方式的降级接口
          
  05、zuul网关测试
+ 
    1）单机版配置eurake
    2）单机版配置服务提供者
    3）zuul服务
